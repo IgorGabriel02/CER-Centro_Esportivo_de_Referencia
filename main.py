@@ -1,18 +1,23 @@
-from flask import Flask , render_template , request
-
+from flask import Flask , render_template 
+from forms import userR_form
 
 # CREATE ROUTES HUB
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'CERadmin_server1'
+
+
+#FORMS 
+
 
 # FLASK ROUTES
 
 
 
-@app.route('/registeR_form')
+@app.route('/register')
 def index4():
-    return render_template('index4.html')
-
+    Rform = userR_form()
+    return render_template('index4.html' , form=Rform ) 
 
 
 # START FLASK

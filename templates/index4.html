@@ -11,20 +11,22 @@
         </section>
     
     <section>
-        <form action="/register_form" method="post" id="regiter_formID">
-            <label for="name">Digite seu nome: </label>
-                <input type="text" name="name" placeholder="user123" required></input>
+        <form method="post">
+            {{ form.hidden_tag() }}
 
-            <label for="email">Digite seu email: </label>
-                <input type="email" name="email"  placeholder="user123@gmail.com" required></input>
+         {%for field in form%}
+            {% if field.type != 'CSRFTokenField' and field.type != 'SubmitField' %}
+        <div> 
 
-            <label for="password">Digite sua senha: </label>
-                <input type="password" name="password"  minlength="8" maxlength="20" placeholder="Use caractéres como @ _ ou letras maiúsculas/minúsculas." required></input>
+           {{field.label}}
+           {{field()}}
+        
+                </div>
+           {%endif%}
+         {%endfor%}
 
-            <label for="re-password">Digite novamente sua senha: </label>
-                <input type="password" name="re-password"  minl="8" maxlength="20" required></input>
-            
-            <button type="submit">CADASTRAR</button>
+         {{form.submit()}}
+
             </form>
         </section>
 
