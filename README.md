@@ -6,7 +6,7 @@
 The mission of CER is to leverage technology to map, register, and connect people to sporting environments, promoting community engagement and accessible physical activity for everyone.
 
 ## 🛠️ Tech Stack
-* **Backend:** Python, Flask
+* **Backend:** Python, Flask , SQLALCHEMY
 * **Forms & Security:** Flask-WTF, WTForms, CSRF Protection
 * **Templating:** Jinja2, HTML5
 * **Version Control:** Git & GitHub
