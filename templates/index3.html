@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CER</title>
+</head>
+<body>
+    <section  id="header">
+
+        </section>
+    <section>
+        <form action="/login" method="post">
+        {{ form.hidden_tag() }}
+        {%for field in form %}
+            {%if field.type != 'CSRFTokenField' and field.type != 'SubmitField'%}
+            <div>
+                {{field.label}}
+                {{field()}}
+            </div>
+                {% endif %}
+            {% endfor %}
+            
+                {{form.submit()}}
+        </form>
+        </section>
+</body>
+</html>
