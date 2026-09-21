@@ -25,7 +25,13 @@ with app.app_context():
 # FLASK ROUTES AND FUNCTIONS
 
 messages = get_flashed_messages
+@app.route('/')
+def index():
+    return render_template('index.html')
 
+@app.route('/content2')
+def content2():
+    return render_template('contet2.html')
 
 @app.route('/register' , methods=['POST' , 'GET'])
 def register():

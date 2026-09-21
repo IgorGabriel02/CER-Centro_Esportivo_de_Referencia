@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CER</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <section  id="header">
+
+        </section>
+
+
+        <section id="content">
+
+            <div class="intro-text">
+
+                <p>Está na hora de <mark>jogar</mark>,<br> mas não sabe onde ficar?<br>
+
+                    <span>
+                    Use a CERsports, uma plataforma que unifica atletas, campeonatos e quadras dentro de <b>UM APP SÓ
+                    </b>, resolvendo a fragmentação do esporte através de um ecossistema digital completo. O aplicativo conecta jogadores para formar equipes, automatiza a criação de tabelas e gerenciamento de torneios, e disponibiliza uma agenda inteligente para a reserva de espaços esportivos de forma rápida e organizada.
+
+                    </span>
+                    
+
+                </p>
+
+                <div id="line"></div>
+                <div id='division'>
+                    <img src="{{ url_for('static', filename='img/atleta.png') }}" alt="atletas icone">
+                    <div class="divisor"></div>
+                     <img src="{{ url_for('static', filename='img/quadras.png') }}" alt="quadras icone">
+                     <div class="divisor"></div>
+                      <img src="{{ url_for('static', filename='img/campeonatos.png') }}" alt="icone de campeonatos.">
+                </div>
+            
+                <button id="start">QUEM SOMOS?</button>
+                    </div>
+
+            <div id="intro-img"></div>
+
+
+            </div>
+        </section>
+
+
+        <section id="content2">
+
+        </section>
+        
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

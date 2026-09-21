@@ -2,8 +2,31 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField , ValidationError
 from wtforms.validators import DataRequired, Email , Length , EqualTo
 from models import user
+import requests
+
 
 # EXTRA VALIDATORS
+
+def validate_address(self , field):
+    url = "https://nominatim.openstreetmap.org/search"
+
+    headers = {
+        'User-Agent': 'Cersports (igorgabrielfdasilva@gmail.com)'
+    }
+    params = {
+        'q': field.data , 
+        'format': 'json'
+    }
+    answer = requests.get(url, params=params , headers=headers)
+    if answer.status_code == 200:
+        dados = answer.json()
+        if len(dados) > 0:
+            field.data = dados[0].get('display_name')
+        else:
+            raise ValidationError("Endereço Inválido.")
+    else:
+        print('nao foi possivel alcançar a API.')
+
 
 def validate_email(self , email_field):
     user_verifier = user.query.filter_by(email=email_field.data).first()
@@ -39,4 +62,4 @@ class pelada_form(FlaskForm):
 
     pelada_name = StringField('Digite o nome da sua pelada:', validators=[DataRequired('É necessário a pelada possuir um nome.') ,   Length(min=10 , max=40 , message='O nome deve possuir no mínimo de 10 a 40 caracteres.')])
 
-    
+    pelada_address = StringField('Digite o endereço:', validators=[DataRequired('É necessário a pelada possuir um endereço.') ,   Length(min=10 ,  message='O endereço deve possuir no mínimo de 10. ')])
