@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CER</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
 </head>
 <body>
     <section id="header">
 
         </section>
     
-    <section>
+    <section class="form">
 
         {% with messages = get_flashed_messages(with_categories=true)%}
             
@@ -23,12 +24,12 @@
                 {%endif%}
             {% endwith %}
 
-        <form action="/register" method="post">
+        <form action="/register" method="post" id="form_register">
             {{ form.hidden_tag() }}
-
+            
          {%for field in form%}
             {% if field.type != 'CSRFTokenField' and field.type != 'SubmitField' %}
-        <div> 
+        <div class="input"> 
 
            {{field.label}}
            {{field()}}
@@ -36,8 +37,13 @@
                 </div>
            {%endif%}
          {%endfor%}
+        <div class="login-link">
+    <span>Já possui uma conta?</span>
+    <a href="/login">Entrar</a>
+</div>
+         <input id="submit" name="submit" type="submit" value="Cadastrar">
 
-         {{form.submit()}}
+         
 
             </form>
         </section>

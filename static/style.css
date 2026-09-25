@@ -1,162 +1,307 @@
-@font-face {
-    font-family: poppins;
-    src: url(fontes/Poppins-Medium.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
-    background-color: rgb(235, 242, 248);
-    overflow-x: hidden;
-}
-
-#header {
-    width: 100%;
-    min-height: 4rem;
-    background-color: rgb(28, 28, 68);
-}
-
-#content {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    min-height: calc(100vh - 4rem);
-}
-
-.intro-text {
-    display: flex;
-    width: 50%;
-    flex-direction: column;
-    padding: clamp(2rem, 5vw, 7rem);
-    gap: 1.5rem;
-}
-
-.intro-text p {
-    font-family: poppins;
-    font-weight: 600;
-    font-size: clamp(2rem, 3vw, 2.8rem);
-    margin: 0;
-}
-
-.intro-text span {
-    position: relative;
-    top: 0.5rem;
-    font-size: clamp(1rem, 1.5vw, 1.3rem);
-    font-weight: 100;
-}
-
-#start {
-    border: none;
-    border-radius: 20px;
+@font-face { 
+    font-family: poppins; 
+    src: url(fontes/Poppins-Medium.ttf); 
+    font-weight: normal; 
+    font-style: normal; 
+} 
+ 
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+ 
+body { 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    min-height: 100vh; 
+    font-family: poppins, sans-serif; 
+    color: #1c1c44;
+    background-color: #F3F4F6;
+} 
+ 
+#content + #content2 { 
+    margin-top: -30px; 
+} 
+ 
+#content2 + #content3 { 
+    margin-top: 50px; 
+} 
+ 
+#header { 
+    width: 100%; 
+    min-height: 4rem; 
     background-color: rgb(28, 28, 68); 
-    color: white;  
-    width: 100%;
-    max-width: 25rem;
-    min-height: 3.5rem;
-    font-size: clamp(1.2rem, 2vw, 2rem);
-    font-family: poppins;
-    cursor: pointer;
-}
-
-#line {
-    width: 10rem;
-    height: 2px;
-    background-color: #1c1c44;
-}
-
-#line2 {
-    width: 14rem;
-    height: 2px;
-    background-color: #1c1c44;
-    margin-left: clamp(2rem, 5vw, 7rem);
-}
-
-#division {
-  display: flex;         
-  flex-direction: row;   
-  align-items: center;   
-  gap: clamp(8rem, 3vw, 10rem);      
-  margin-top: 20px; 
-  flex-wrap: wrap; 
-}
-
-#division img {
-  width: clamp(4rem, 8vw, 8rem); 
-  height: auto;         
-  display: block;
-}
-
-.divisor {
-  width: 1px;                    
-  height: 60px;                  
-  background-color: #b9c6d1;   
-  align-self: center;
-}
-
-#intro-img {
-  background-image: url('img/basquete.JPG');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 50%;
-  min-height: 100%;
-  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
-}
-
-#content2 {
-    width: 60%;
-    height: 100%;
-}
-
-.icon {
-    display: flex;
-    flex-direction: column;
+} 
+ 
+#content { 
+    display: flex; 
+    flex-direction: row; 
+    width: 100%; 
+    min-height: calc(100vh - 4rem);
+    background-color: #F3F4F6;
+} 
+ 
+.intro-text { 
+    display: flex; 
+    width: 50%; 
+    flex-direction: column; 
+    padding: clamp(2rem, 5vw, 7rem); 
+    gap: 1.5rem; 
+} 
+ 
+.intro-text p { 
+    font-weight: 600; 
+    font-size: clamp(2rem, 3vw, 2.8rem); 
+    margin: 0; 
+} 
+ 
+.intro-text span { 
+    position: relative; 
+    top: 0.5rem; 
+    font-size: clamp(1rem, 1.5vw, 1.3rem); 
+    font-weight: 100; 
+} 
+ 
+.start { 
+    border: none; 
+    border-radius: 20px; 
+    background-color: rgb(28, 28, 68); 
+    color: white; 
+    text-align: center; 
+     
+   
+    max-width: 25rem; 
+    min-height: 3.5rem; 
+    font-size: clamp(1.2rem, 2vw, 2rem); 
+    font-family: poppins, sans-serif; 
+    cursor: pointer; 
+} 
+ 
+#line { 
+    width: 10rem; 
+    height: 2px; 
+    background-color: #1c1c44; 
+} 
+ 
+#line2 { 
+    width: 14rem; 
+    height: 2px; 
+    background-color: #1c1c44; 
+    margin-left: clamp(2rem, 5vw, 7rem); 
+} 
+ 
+#division { 
+    display: flex; 
+    flex-direction: row; 
     align-items: center; 
-    text-align: center;  
-    margin-top: 3rem;
-    margin-left: clamp(2rem, 5vw, 7rem);
-}
-
-.icon p {
-    font-family: poppins;
-    font-weight: 700;
-    font-size: 1.5rem;
-    max-width: 400px; 
-}
-
-.icon span {
-    font-weight: normal;
-    font-size: 1rem;
-}
-
-.icon img {
-    width: 6rem;
-    height: auto;
-}
-
-#icon-section {
-    display: flex;
+    gap: clamp(8rem, 3vw, 10rem); 
+    margin-top: 20px; 
+    flex-wrap: wrap; 
+} 
+ 
+#division img { 
+    width: clamp(6rem, 8vw, 8rem); 
+    height: auto; 
+    display: block; 
+} 
+ 
+.divisor { 
+    width: 1px; 
+    height: 60px; 
+    background-color: #b9c6d1; 
+    align-self: center; 
+} 
+ 
+#intro-img { 
+    background-image: url('img/basquete.jpg.png'); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    width: 50%; 
+    min-height: 100%; 
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); 
+    -webkit-mask-image: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 1) 80%, 
+        rgba(0, 0, 0, 0) 100%
+    ); 
+    mask-image: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 1) 80%, 
+        rgba(0, 0, 0, 0) 100%
+    ); 
+} 
+ 
+#content2 { 
+    width: 100%; 
+    min-height: 100vh; 
+    display: flex; 
     flex-direction: row;
+    background-color: #F3F4F6;
+} 
+ 
+.icon { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    margin-top: 3rem; 
+    margin-left: clamp(2rem, 5vw, 7rem); 
+} 
+ 
+.icon p { 
+    font-weight: 700; 
+    font-size: 1.5rem; 
+    max-width: 400px; 
+} 
+ 
+.icon span { 
+    font-weight: normal; 
+    font-size: 1rem; 
+} 
+ 
+.icon img { 
+    width: clamp(3rem, 8vw, 6rem); 
+    height: auto; 
+} 
+ 
+#icon-section { 
+    display: flex; 
+    flex-direction: row; 
+} 
+ 
+#half1 { 
+    max-width: 60%; 
+    min-height: 100vh; 
+} 
+ 
+#half2 { 
+    max-width: 40%; 
+    min-height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+} 
+ 
+#img_div { 
+    width: 35rem; 
+    min-height: 50rem; 
+    margin-left: clamp(6rem, 5vw, 15rem); 
+    border-radius: 2rem; 
+    background-image: url(img/half2.png); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    overflow: hidden; 
+} 
+ 
+#img_div img { 
+    object-fit: contain; 
+} 
+ 
+#content3 { 
+    width: 100%; 
+    height: 100vh; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-image: 
+        linear-gradient(
+            to top, 
+            rgba(243, 244, 246, 0.2) 80%, 
+            rgba(243, 244, 246, 0.9) 100%
+        ),  
+        url('img/playing\ volei\ \(2\).png'); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column; 
+    gap: 2rem; 
+} 
+ 
+#content3 div { 
+    color: #1c1c44; 
+    font-size: clamp(4rem, 5vw, 5rem); 
 }
 
-@media (max-width: 900px) {
-    #content {
-        flex-direction: column; 
-    }
+/* REGISTER AND LOGIN FORMS */
 
-    #intro-text {
-        width: 100%;
-        padding: 3rem 1.5rem;
-        box-sizing: border-box;
-    }
 
-    #intro-img {
-        width: 100%;
-        height: 300px; 
-        clip-path: none; 
-    }
+.form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 4rem);
+}
+
+#form_register {
+        display: flex;
+        height: 35rem;
+        width: 30rem;
+        background-color: white;
+        flex-direction: column;
+        gap: 2rem;
+        border-radius: 3rem;
+        align-items: center;
+        
+}
+
+.input  {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+}
+
+.input input {
+        width: 25rem;
+        height: 2rem;
+        border: none;
+        border-radius: 3rem;
+        
+        background-color: rgb(243, 244, 246) ;
+}
+
+#submit {
+        border: none; 
+    border-radius: 20px; 
+    background-color: rgb(28, 28, 68); 
+    color: white; 
+    text-align: center; 
+     
+   
+    width: 12rem; 
+    min-height: 2.3rem; 
+    font-size: clamp(0.5rem, 2vw, 1.2rem); 
+    font-family: poppins, sans-serif; 
+    cursor: pointer; 
+margin-top: -1rem;
+
+
+    
+}
+
+.login-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.login-link span {
+    color: #6b6b7a;
+}
+
+.login-link a {
+    color: #1c1c44;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
 }

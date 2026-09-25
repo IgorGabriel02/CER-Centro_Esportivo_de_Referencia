@@ -35,8 +35,9 @@
                      <div class="divisor"></div>
                       <img src="{{ url_for('static', filename='img/campeonatos.png') }}" alt="icone de campeonatos.">
                 </div>
-            
-                <button id="start">QUEM SOMOS?</button>
+            <a href="#content2">
+                <button class="start">QUEM SOMOS?</button>
+                    </a>
                     </div>
 
             <div id="intro-img"></div>
@@ -46,9 +47,65 @@
         </section>
 
 
-        <section id="content2">
+         <section id="content2">
+        <div id="half1">
 
-        </section>
+            <div class="intro-text">
+                <p>
+                    Quem somos? 
+                    <span><br>Nós da CERsports somos uma plataforma criada para aproximar pessoas por meio do esporte.
+Nosso objetivo é facilitar o acesso a peladas, 
+campeonatos e eventos esportivos, conectando 
+jogadores e oportunidades para quem quer 
+praticar esportes.</span>
+
+                </p>
+        </div>
+             <div id="line2"></div>
+            <div id="icon-section">
+
+                <div class="icon">
+                     <img src="{{ url_for('static', filename='img/missaoicon.png') }}" alt="nossa missão">
+                     <p>MISSÃO<br> <span>Conectar pessoas através do esporte, facilitando o acesso a eventos e promovendo novas oportunidades.
+                     </span> </p>
+                </div>
+
+                
+                <div class="icon">
+                     <img src="{{ url_for('static', filename='img/olhoicon.png') }}" alt="nossa missão">
+                     <p>VISÃO<br> <span>Simplificar a organização e a participação em peladas, campeonatos e atividades desportivas na plataforma.
+                     </span> </p>
+                </div>
+
+
+                
+                <div class="icon">
+                     <img src="{{ url_for('static', filename='img/vlicon.png') }}" alt="nossa missão">
+                     <p>VALORES<br> <span>Nós da CER buscamos priorizar Comunidade, inclusão, acessibilidade e união de jogadores que partilham a paixão por praticar desporto.
+                     </span> </p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div id="half2">
+            <div id="img_div">
+            </div>
+        </div>
+
+    </section>
+
+    <section id="content3">
+        <div>
+        <p>OQUE VOCÊ ESTÁ ESPERANDO?
+        </p>
+        </div>
+        <a class="start" href="/register">COMEÇAR</a>
+
+    </section>
         
         <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
